@@ -16,4 +16,9 @@ class FMHashSpec extends ObjectBehavior
     {
     	$this::make('foo', 'bar')->shouldReturn('<:foo:=bar:>');
     }
+
+    function it_gets_a_value_from_a_hash_by_key()
+    {
+    	$this::get('<:foo:=bar:>', 'foo')->shouldReturn('bar');
+    }
 }
