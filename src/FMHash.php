@@ -7,9 +7,9 @@ class FMHash {
     	$hasher = new static;
 
         $head = "<:";
-        $key_hashed = $hasher->hashString($key);
+        $key_hashed = $hasher->escape($key);
 		$middle = ":=";
-        $value_hashed = $hasher->hashString($value);
+        $value_hashed = $hasher->escape($value);
 		$tail = ":>";
 		
 		return implode('', [
@@ -21,7 +21,7 @@ class FMHash {
     {
     	$hasher = new static;
 
-        $match = '<:' . $hasher->hashString($key) . ':=';
+        $match = '<:' . $hasher->escape($key) . ':=';
         $pstart = strpos($hash, $match);
         $start = $pstart + strlen($match);
         $end = strpos($hash, ':>', $start);
@@ -33,10 +33,10 @@ class FMHash {
 
         $hashed_value = substr($hash, $start, $len);
 
-        return $hasher->deHashString($hashed_value);
+        return $hasher->deEscape($hashed_value);
     }
 
-    private function hashString($string)
+    private function escape($string)
     {
     	return str_replace(
 			array('=', ':', '>', '<'),
@@ -45,7 +45,7 @@ class FMHash {
 		);
     }
 
-    private function deHashString($string)
+    private function deEscape($string)
     {
     	return str_replace(
 			array('/=', '/:', '/>', '/<'),
