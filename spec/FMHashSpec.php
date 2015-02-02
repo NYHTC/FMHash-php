@@ -21,4 +21,10 @@ class FMHashSpec extends ObjectBehavior
     {
     	$this::get('<:foo:=bar:>', 'foo')->shouldReturn('bar');
     }
+
+    function it_accepts_an_array_to_make_a_hash()
+    {
+        $this::make(['foo' => 'bar', 'bazz' => 'buzz'])
+            ->shouldReturn('<:foo:=bar:><:bazz:=buzz:>');
+    }
 }

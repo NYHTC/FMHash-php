@@ -2,9 +2,19 @@
 
 class FMHash {
 	
-    public static function make($key, $value)
+    public static function make($key, $value = null)
     {
     	$hasher = new static;
+
+        //allow for array as first param
+        if(is_array($key)) {
+            $hash = '';
+            foreach($key as $name => $value) {
+                $hash .= $hasher::make($name, $value);
+            }
+
+            return $hash;
+        }
 
         $head = "<:";
         $key_hashed = $hasher->escape($key);
