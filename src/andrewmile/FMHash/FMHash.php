@@ -1,4 +1,4 @@
-<?php
+<?php namespace andrewmile\FMHash;
 
 class FMHash {
 	
