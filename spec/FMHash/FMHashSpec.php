@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\andrewmile\FMHash;
+namespace spec\FMHash;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class FMHashSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('andrewmile\FMHash\FMHash');
+        $this->shouldHaveType('FMHash\FMHash');
     }
 
     function it_creates_a_hash_from_a_key_value_pair()
