@@ -1,5 +1,5 @@
 {
-	"name": "andrewmile/FMHash",
+	"name": "andrewmile/fm-hash",
 	"description": "Key/Value dictionary hasher",
 	"keywords": [
 		"filemaker",
