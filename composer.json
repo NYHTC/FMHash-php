@@ -1,5 +1,20 @@
 {
+	"name": "andrewmile/FMHash",
+	"description": "Key/Value dictionary hasher",
+	"keywords": [
+		"filemaker",
+		"sixfriedrice"
+	],
+	"authors": [
+		{
+			"name": "Andrew Morgan",
+			"email": "andrewmile@gmail.com"
+		}
+	],
     "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
         "phpspec/phpspec": "~2.0"
     },
     "autoload": {
