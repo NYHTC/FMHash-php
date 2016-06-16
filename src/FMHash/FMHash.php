@@ -1,7 +1,12 @@
 <?php namespace FMHash;
 
 class FMHash {
-	
+
+    public function hash($key, $value = null)
+    {
+        return static::make($key, $value);
+    }
+
     public static function make($key, $value = null)
     {
     	$hasher = new static;
@@ -21,12 +26,12 @@ class FMHash {
 		$middle = ":=";
         $value_hashed = $hasher->escape($value);
 		$tail = ":>";
-		
+
 		return implode('', [
 			$head, $key_hashed, $middle, $value_hashed, $tail
 		]);
     }
-    
+
     public static function get($hash, $key)
     {
     	$hasher = new static;
